@@ -1,5 +1,6 @@
 import json
 import logging
+import random
 import re
 
 from app.models.ai_response import AIResponse
@@ -26,7 +27,11 @@ def parse_and_format(
         return _build_whatsapp_message(data, product_score, progress)
     except Exception as e:
         logger.warning("Failed to parse AI JSON response: %s", e)
-        return _strip_markdown(raw)[:WHATSAPP_MAX_LENGTH]
+        # Never send raw JSON to user — if fallback text looks like JSON, send generic message
+        stripped = _strip_markdown(raw)
+        if stripped.strip().startswith("{"):
+            return "I had trouble analyzing that fully. Could you try again or send a clearer photo?"
+        return stripped[:WHATSAPP_MAX_LENGTH]
 
 
 def _extract_json(raw: str) -> str:
@@ -93,12 +98,16 @@ def _build_whatsapp_message(
             suggestion = suggestion.replace(" • ", "\n• ")
         parts.append(suggestion)
 
-    # 6. Confidence-based tone
-    if data.confidence == "low":
+    # 6. Confidence-based tone (only if AI didn't already express uncertainty in summary)
+    summary_lower = data.summary.lower() if data.summary else ""
+    already_uncertain = any(phrase in summary_lower for phrase in [
+        "i don't see", "i couldn't", "not sure", "may be wrong", "not clear",
+    ])
+    if data.confidence == "low" and not already_uncertain:
         parts.append(
             "I might be off here - could you share the full ingredient list for a better check?"
         )
-    elif data.confidence == "medium" and data.type == "product_check":
+    elif data.confidence == "medium" and data.type == "product_check" and not already_uncertain:
         parts.append(
             "This is based on general knowledge. For a more accurate check, send the ingredient list or a photo."
         )
@@ -122,11 +131,12 @@ def _build_whatsapp_message(
     if data.follow_up:
         parts.append(data.follow_up)
 
-    # 9. Share prompt (product checks with verdict only)
+    # 9. Share prompt (product checks only, ~30% of the time to avoid spam)
     if data.type == "product_check" and data.verdict and data.confidence != "low":
-        parts.append(
-            "Know someone who uses this product? Forward this to them!"
-        )
+        if random.random() < 0.3:
+            parts.append(
+                "Know someone who uses this product? Forward this to them!"
+            )
 
     message = "\n\n".join(parts)
     return message[:WHATSAPP_MAX_LENGTH]

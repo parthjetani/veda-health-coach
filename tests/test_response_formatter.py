@@ -44,7 +44,7 @@ class TestParseAndFormat:
         data = {
             "type": "product_check",
             "verdict": "Use with caution",
-            "summary": "Not sure about this one.",
+            "summary": "This product has some concerns.",
             "key_ingredients": [],
             "explanation": None,
             "suggestion": None,
@@ -54,14 +54,28 @@ class TestParseAndFormat:
         result = parse_and_format(json.dumps(data))
         assert "might be off" in result
 
+    def test_low_confidence_no_duplicate_when_ai_already_uncertain(self):
+        data = {
+            "type": "product_check",
+            "verdict": "Use with caution",
+            "summary": "I don't see clear ingredients on this label.",
+            "key_ingredients": [],
+            "explanation": None,
+            "suggestion": None,
+            "follow_up": None,
+            "confidence": "low",
+        }
+        result = parse_and_format(json.dumps(data))
+        assert "might be off" not in result  # AI already expressed uncertainty
+
     def test_fallback_on_invalid_json(self):
         result = parse_and_format("This is not JSON at all")
         assert result == "This is not JSON at all"
 
     def test_fallback_on_partial_json(self):
         result = parse_and_format('{"type": "product_check"}')
-        # Should fallback since required fields are missing
-        assert "product_check" in result
+        # Partial JSON should trigger generic fallback (never show raw JSON to user)
+        assert "trouble analyzing" in result
 
     def test_handles_code_block_wrapped_json(self, sample_ai_json_response):
         wrapped = f"```json\n{sample_ai_json_response}\n```"

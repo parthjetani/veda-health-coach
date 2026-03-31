@@ -238,6 +238,15 @@ async def _process_message(
         if alt_context:
             product_context = alt_context
             logger.info("Affirmation detected - injecting alternatives context")
+        else:
+            # No specific alternatives found, but user said "yes" to something.
+            # Add context hint so Gemini knows to deliver on its previous offer.
+            product_context = (
+                "FOLLOW-UP CONTEXT: The user is responding affirmatively to your previous message. "
+                "Check your conversation history and deliver what you offered or asked about. "
+                "Do NOT ask them to clarify. Give them the information or recommendations directly."
+            )
+            logger.info("Affirmation detected - no alternatives, injecting follow-up hint")
     else:
         await log_unknown_query(supabase, user_id, query_text)
 

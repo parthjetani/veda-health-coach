@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     # Google Gemini
     gemini_api_key: str
     gemini_model: str = "gemini-2.5-flash"
-    gemini_max_tokens: int = 1024
+    gemini_max_tokens: int = 4096
     gemini_temperature: float = 0.3
 
     # Supabase
