@@ -4,7 +4,7 @@
 No active code tasks. Next priority: GitHub + deployment.
 
 ## Remaining Actions (not code)
-- [ ] Push code to GitHub (private repo)
+- [x] Push code to GitHub (private repo)
 - [ ] Deploy to Railway or Render
 - [ ] Update Meta webhook URL to production domain
 - [ ] Test with 5 real people
