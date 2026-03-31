@@ -1,0 +1,15 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+tests/
+docs/
+scripts/
+.env
+.env.local
+.git/
+.gitignore
+*.md
+test_conversations.txt
+.claude/

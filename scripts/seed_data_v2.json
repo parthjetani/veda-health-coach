@@ -1,0 +1,493 @@
+[
+    {
+        "item_name": "Dove Beauty Bar",
+        "brand": "Dove",
+        "category": "personal_care",
+        "aliases": [
+            "dove soap",
+            "dove bar",
+            "dove bath soap",
+            "dove beauty soap"
+        ],
+        "ingredients": [
+            "Sodium Lauroyl Isethionate",
+            "Stearic Acid",
+            "Sodium Tallowate",
+            "Sodium Palmitate",
+            "Lauric Acid",
+            "Sodium Isethionate",
+            "Water",
+            "Sodium Stearate",
+            "Cocamidopropyl Betaine",
+            "Sodium Cocoate",
+            "Fragrance",
+            "Sodium Chloride",
+            "Tetrasodium EDTA",
+            "Tetrasodium Etidronate",
+            "Alumina",
+            "BHT",
+            "Titanium Dioxide"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemical mixture, may irritate sensitive skin",
+                "risk": "medium"
+            },
+            {
+                "name": "BHT",
+                "reason": "synthetic antioxidant preservative, potential endocrine disruptor",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Switch to a fragrance-free soap bar for daily use",
+        "alternative_brand": "Dr. Bronner's Unscented Baby Mild",
+        "confidence_source": "verified",
+        "notes": "Marketed as gentle but contains fragrance which is a catch-all for dozens of undisclosed chemicals"
+    },
+    {
+        "item_name": "Aveeno Daily Moisturizing Lotion",
+        "brand": "Aveeno",
+        "category": "personal_care",
+        "aliases": [
+            "aveeno lotion",
+            "aveeno moisturizer",
+            "aveeno body lotion",
+            "aveeno daily lotion"
+        ],
+        "ingredients": [
+            "Water",
+            "Glycerin",
+            "Distearyldimonium Chloride",
+            "Petrolatum",
+            "Isopropyl Palmitate",
+            "Cetyl Alcohol",
+            "Dimethicone",
+            "Avena Sativa Kernel Flour",
+            "Benzyl Alcohol",
+            "Sodium Chloride",
+            "Fragrance"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Fragrance",
+                "reason": "can hide multiple undisclosed chemicals",
+                "risk": "medium"
+            },
+            {
+                "name": "Benzyl Alcohol",
+                "reason": "preservative that may cause skin irritation in sensitive individuals",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Choose a fragrance-free moisturizer for daily use",
+        "alternative_brand": "Vanicream Moisturizing Cream",
+        "confidence_source": "verified",
+        "notes": "Oat-based formula is gentle but fragrance adds unnecessary chemical exposure"
+    },
+    {
+        "item_name": "Head & Shoulders Classic Clean Shampoo",
+        "brand": "Head & Shoulders",
+        "category": "personal_care",
+        "aliases": [
+            "head and shoulders",
+            "head & shoulders shampoo",
+            "h&s shampoo",
+            "head shoulders"
+        ],
+        "ingredients": [
+            "Water",
+            "Sodium Lauryl Sulfate",
+            "Sodium Laureth Sulfate",
+            "Glycol Distearate",
+            "Zinc Pyrithione",
+            "Cocamidopropyl Betaine",
+            "Fragrance",
+            "Sodium Chloride",
+            "Dimethicone",
+            "Sodium Benzoate",
+            "Guar Hydroxypropyltrimonium Chloride",
+            "Magnesium Carbonate Hydroxide"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Lauryl Sulfate",
+                "reason": "strong cleanser that strips natural oils, may cause dryness",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemical mixture",
+                "risk": "medium"
+            },
+            {
+                "name": "Dimethicone",
+                "reason": "silicone that can build up on hair over time",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Try a sulfate-free anti-dandruff shampoo",
+        "alternative_brand": "Nizoral A-D",
+        "confidence_source": "verified",
+        "notes": "Effective for dandruff but SLS can irritate sensitive scalps"
+    },
+    {
+        "item_name": "Colgate Total Toothpaste",
+        "brand": "Colgate",
+        "category": "personal_care",
+        "aliases": [
+            "colgate toothpaste",
+            "colgate total",
+            "colgate paste"
+        ],
+        "ingredients": [
+            "Sorbitol",
+            "Water",
+            "Hydrated Silica",
+            "Glycerin",
+            "PVM/MA Copolymer",
+            "Sodium Lauryl Sulfate",
+            "Cellulose Gum",
+            "Flavor",
+            "Sodium Hydroxide",
+            "Carrageenan",
+            "Sodium Saccharin",
+            "Titanium Dioxide"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Lauryl Sulfate",
+                "reason": "can cause mouth ulcers and irritation in sensitive individuals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Switch to an SLS-free toothpaste",
+        "alternative_brand": "Tom's of Maine Fluoride Toothpaste",
+        "confidence_source": "verified",
+        "notes": "Reformulated to remove triclosan but still contains SLS"
+    },
+    {
+        "item_name": "Neutrogena Ultra Sheer Sunscreen SPF 70",
+        "brand": "Neutrogena",
+        "category": "personal_care",
+        "aliases": [
+            "neutrogena sunscreen",
+            "neutrogena ultra sheer",
+            "neutrogena spf 70"
+        ],
+        "ingredients": [
+            "Avobenzone 3%",
+            "Homosalate 15%",
+            "Octisalate 5%",
+            "Octocrylene 10%",
+            "Oxybenzone 6%",
+            "Water",
+            "Styrene/Acrylates Copolymer",
+            "Silica",
+            "Diethylhexyl 2,6-Naphthalate",
+            "Fragrance"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Oxybenzone",
+                "reason": "potential endocrine disruptor, harmful to coral reefs",
+                "risk": "high"
+            },
+            {
+                "name": "Homosalate",
+                "reason": "may disrupt hormones with repeated use",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemical mixture",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Use a mineral sunscreen with zinc oxide or titanium dioxide instead",
+        "alternative_brand": "Blue Lizard Sensitive Mineral Sunscreen",
+        "confidence_source": "verified",
+        "notes": "Chemical sunscreen with known endocrine disruptors. Mineral alternatives are safer."
+    },
+    {
+        "item_name": "Coca-Cola Classic",
+        "brand": "Coca-Cola",
+        "category": "food",
+        "aliases": [
+            "coca cola",
+            "coke",
+            "coca-cola",
+            "regular coke"
+        ],
+        "ingredients": [
+            "Carbonated Water",
+            "High Fructose Corn Syrup",
+            "Caramel Color",
+            "Phosphoric Acid",
+            "Natural Flavors",
+            "Caffeine"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "High Fructose Corn Syrup",
+                "reason": "linked to obesity and metabolic issues",
+                "risk": "high"
+            },
+            {
+                "name": "Caramel Color",
+                "reason": "may contain 4-MEI, a potential carcinogen",
+                "risk": "medium"
+            },
+            {
+                "name": "Phosphoric Acid",
+                "reason": "can affect calcium absorption and tooth enamel",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Replace with sparkling water or naturally flavored seltzer",
+        "alternative_brand": "LaCroix Sparkling Water",
+        "confidence_source": "verified",
+        "notes": "39g sugar per can. Regular consumption linked to obesity, diabetes, and dental issues."
+    },
+    {
+        "item_name": "Nutella Hazelnut Spread",
+        "brand": "Ferrero",
+        "category": "food",
+        "aliases": [
+            "nutella",
+            "nutella spread",
+            "nutella chocolate"
+        ],
+        "ingredients": [
+            "Sugar",
+            "Palm Oil",
+            "Hazelnuts",
+            "Cocoa",
+            "Skim Milk",
+            "Whey",
+            "Lecithin",
+            "Vanillin"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sugar",
+                "reason": "first ingredient by weight, very high sugar content",
+                "risk": "high"
+            },
+            {
+                "name": "Palm Oil",
+                "reason": "high in saturated fat, environmental and health concerns",
+                "risk": "medium"
+            },
+            {
+                "name": "Vanillin",
+                "reason": "synthetic flavoring, not real vanilla",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Try a natural nut butter with less sugar",
+        "alternative_brand": "Justin's Chocolate Hazelnut Butter",
+        "confidence_source": "verified",
+        "notes": "Sugar is the #1 ingredient. Over 50% of Nutella is sugar and palm oil."
+    },
+    {
+        "item_name": "Pantene Pro-V Shampoo",
+        "brand": "Pantene",
+        "category": "personal_care",
+        "aliases": [
+            "pantene shampoo",
+            "pantene pro v",
+            "pantene prov"
+        ],
+        "ingredients": [
+            "Water",
+            "Sodium Lauryl Sulfate",
+            "Sodium Laureth Sulfate",
+            "Cocamidopropyl Betaine",
+            "Dimethicone",
+            "Sodium Citrate",
+            "Cocamide MEA",
+            "Sodium Xylenesulfonate",
+            "Fragrance",
+            "Citric Acid",
+            "Sodium Benzoate",
+            "DMDM Hydantoin",
+            "Tetrasodium EDTA",
+            "Panthenol"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Lauryl Sulfate",
+                "reason": "strips natural oils, may cause dryness and irritation",
+                "risk": "medium"
+            },
+            {
+                "name": "DMDM Hydantoin",
+                "reason": "formaldehyde-releasing preservative, class action lawsuit filed",
+                "risk": "high"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemical mixture",
+                "risk": "medium"
+            },
+            {
+                "name": "Dimethicone",
+                "reason": "silicone buildup on hair over time",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Switch to a sulfate-free, silicone-free shampoo",
+        "alternative_brand": "Shea Moisture Raw Shea Butter Shampoo",
+        "confidence_source": "verified",
+        "notes": "DMDM Hydantoin releases formaldehyde. Subject of class action lawsuits."
+    },
+    {
+        "item_name": "Febreze Air Freshener",
+        "brand": "Febreze",
+        "category": "household",
+        "aliases": [
+            "febreze",
+            "febreze spray",
+            "febreze air"
+        ],
+        "ingredients": [
+            "Water",
+            "Alcohol Denat",
+            "Diethylene Glycol",
+            "Benzisothiazolinone",
+            "Fragrance",
+            "Nitrogen"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed mix that affects indoor air quality",
+                "risk": "medium"
+            },
+            {
+                "name": "Benzisothiazolinone",
+                "reason": "preservative linked to skin sensitization",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Use natural air fresheners like essential oil diffusers or baking soda",
+        "alternative_brand": "Aura Cacia Essential Oil Diffuser",
+        "confidence_source": "verified",
+        "notes": "Masks odors with chemicals rather than eliminating them"
+    },
+    {
+        "item_name": "Nature Made Multivitamin",
+        "brand": "Nature Made",
+        "category": "supplement",
+        "aliases": [
+            "nature made vitamin",
+            "nature made multi",
+            "nature made daily"
+        ],
+        "ingredients": [
+            "Calcium Carbonate",
+            "Magnesium Oxide",
+            "Ascorbic Acid",
+            "Ferrous Fumarate",
+            "DL-Alpha Tocopheryl Acetate",
+            "Niacinamide",
+            "Zinc Oxide",
+            "Calcium Pantothenate",
+            "Manganese Sulfate",
+            "Pyridoxine Hydrochloride"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Solid choice for a basic multivitamin. USP verified for quality.",
+        "alternative_brand": null,
+        "confidence_source": "verified",
+        "notes": "USP verified - one of the cleanest mainstream multivitamins"
+    },
+    {
+        "item_name": "Listerine Cool Mint Mouthwash",
+        "brand": "Listerine",
+        "category": "personal_care",
+        "aliases": [
+            "listerine",
+            "listerine mouthwash",
+            "listerine cool mint"
+        ],
+        "ingredients": [
+            "Water",
+            "Alcohol (21.6%)",
+            "Sorbitol",
+            "Eucalyptol",
+            "Thymol",
+            "Methyl Salicylate",
+            "Menthol",
+            "Sodium Saccharin",
+            "FD&C Green 3"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Alcohol (21.6%)",
+                "reason": "high alcohol content can dry out mouth and disrupt oral microbiome",
+                "risk": "medium"
+            },
+            {
+                "name": "FD&C Green 3",
+                "reason": "artificial color unnecessary in a health product",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Try an alcohol-free mouthwash",
+        "alternative_brand": "TheraBreath Fresh Breath Oral Rinse",
+        "confidence_source": "verified",
+        "notes": "High alcohol content. Alcohol-free mouthwashes are equally effective."
+    },
+    {
+        "item_name": "Gatorade Thirst Quencher",
+        "brand": "Gatorade",
+        "category": "food",
+        "aliases": [
+            "gatorade",
+            "gatorade drink",
+            "gatorade sports drink"
+        ],
+        "ingredients": [
+            "Water",
+            "Sugar",
+            "Dextrose",
+            "Citric Acid",
+            "Natural Flavor",
+            "Salt",
+            "Sodium Citrate",
+            "Monopotassium Phosphate",
+            "Modified Food Starch",
+            "Blue 1"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sugar",
+                "reason": "34g per bottle, high for a sports drink",
+                "risk": "medium"
+            },
+            {
+                "name": "Blue 1",
+                "reason": "artificial color with no nutritional value",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Hydrate with water and electrolyte tablets instead",
+        "alternative_brand": "LMNT Electrolyte Mix",
+        "confidence_source": "verified",
+        "notes": "High sugar. For most people, water with a pinch of salt is better."
+    }
+]

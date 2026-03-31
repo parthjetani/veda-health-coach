@@ -1,0 +1,1821 @@
+[
+    {
+        "item_name": "Lux Soft Touch Soap",
+        "brand": "Lux",
+        "category": "personal_care",
+        "aliases": [
+            "lux soap",
+            "lux soft touch",
+            "lux bathing soap"
+        ],
+        "ingredients": [
+            "Sodium Palmate",
+            "Sodium Palm Kernelate",
+            "Water",
+            "Fragrance",
+            "Glycerin",
+            "Titanium Dioxide",
+            "BHT",
+            "EDTA"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemical mixture",
+                "risk": "medium"
+            },
+            {
+                "name": "BHT",
+                "reason": "synthetic preservative, potential endocrine disruptor",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Choose a fragrance-free soap for daily use",
+        "alternative_brand": "Khadi Natural Herbal Soap",
+        "confidence_source": "verified",
+        "notes": "Popular in India but contains synthetic fragrance"
+    },
+    {
+        "item_name": "Dettol Original Soap",
+        "brand": "Dettol",
+        "category": "personal_care",
+        "aliases": [
+            "dettol soap",
+            "dettol bath soap",
+            "dettol original"
+        ],
+        "ingredients": [
+            "Sodium Palmate",
+            "Water",
+            "Sodium Palm Kernelate",
+            "Fragrance",
+            "Triclocarban",
+            "Chloroxylenol",
+            "BHT",
+            "Titanium Dioxide"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Triclocarban",
+                "reason": "antimicrobial linked to hormone disruption",
+                "risk": "high"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Regular soap and water is equally effective for daily washing",
+        "alternative_brand": "Mamaearth Ubtan Body Wash",
+        "confidence_source": "verified",
+        "notes": "Triclocarban banned in the US but still sold in India"
+    },
+    {
+        "item_name": "Lifebuoy Total 10 Soap",
+        "brand": "Lifebuoy",
+        "category": "personal_care",
+        "aliases": [
+            "lifebuoy soap",
+            "lifebuoy total",
+            "lifebuoy red soap"
+        ],
+        "ingredients": [
+            "Sodium Palmate",
+            "Water",
+            "Sodium Palm Kernelate",
+            "Fragrance",
+            "Actiguard",
+            "Triclocarban",
+            "BHT"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Triclocarban",
+                "reason": "antimicrobial linked to hormone disruption",
+                "risk": "high"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Switch to a simple soap without antimicrobial agents",
+        "alternative_brand": "Himalaya Neem & Turmeric Soap",
+        "confidence_source": "verified",
+        "notes": "Antimicrobial soaps not proven more effective than regular soap"
+    },
+    {
+        "item_name": "Pears Pure & Gentle Soap",
+        "brand": "Pears",
+        "category": "personal_care",
+        "aliases": [
+            "pears soap",
+            "pears glycerin soap",
+            "pears transparent soap"
+        ],
+        "ingredients": [
+            "Sorbitol",
+            "Water",
+            "Sodium Palmitate",
+            "Sodium Stearate",
+            "Glycerin",
+            "Propylene Glycol",
+            "Sodium Rosinate",
+            "Fragrance",
+            "Cedar Extract"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            },
+            {
+                "name": "Propylene Glycol",
+                "reason": "skin irritant for some people",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "One of the gentler mainstream options. For even cleaner, try fragrance-free",
+        "alternative_brand": "Sebamed Cleansing Bar",
+        "confidence_source": "verified",
+        "notes": "Glycerin-based formula is relatively mild"
+    },
+    {
+        "item_name": "Himalaya Neem Face Wash",
+        "brand": "Himalaya",
+        "category": "personal_care",
+        "aliases": [
+            "himalaya face wash",
+            "himalaya neem face wash",
+            "himalaya purifying neem"
+        ],
+        "ingredients": [
+            "Water",
+            "Cocamidopropyl Betaine",
+            "Neem Extract",
+            "Turmeric Extract",
+            "Glycerin",
+            "Fragrance",
+            "Methylparaben",
+            "Propylparaben"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Methylparaben",
+                "reason": "preservative that may affect hormone balance",
+                "risk": "medium"
+            },
+            {
+                "name": "Propylparaben",
+                "reason": "preservative linked to endocrine disruption",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Look for paraben-free face washes",
+        "alternative_brand": "Plum Green Tea Pore Cleansing Face Wash",
+        "confidence_source": "verified",
+        "notes": "Good herbal base but parabens undermine the natural positioning"
+    },
+    {
+        "item_name": "Pond's White Beauty Cream",
+        "brand": "Pond's",
+        "category": "personal_care",
+        "aliases": [
+            "ponds cream",
+            "ponds white beauty",
+            "ponds face cream",
+            "ponds moisturizer"
+        ],
+        "ingredients": [
+            "Water",
+            "Stearic Acid",
+            "Glycerin",
+            "Niacinamide",
+            "Isopropyl Myristate",
+            "Dimethicone",
+            "Fragrance",
+            "Methylparaben",
+            "Propylparaben",
+            "BHT"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Methylparaben",
+                "reason": "may affect hormone balance",
+                "risk": "medium"
+            },
+            {
+                "name": "Propylparaben",
+                "reason": "linked to endocrine disruption",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            },
+            {
+                "name": "BHT",
+                "reason": "synthetic preservative",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Choose a paraben-free moisturizer with niacinamide",
+        "alternative_brand": "Minimalist Niacinamide Moisturizer",
+        "confidence_source": "verified",
+        "notes": "Niacinamide is beneficial but parabens and fragrance are concerns"
+    },
+    {
+        "item_name": "Fair & Lovely (Glow & Lovely) Cream",
+        "brand": "Glow & Lovely",
+        "category": "personal_care",
+        "aliases": [
+            "fair and lovely",
+            "glow and lovely",
+            "fair lovely cream",
+            "glow lovely"
+        ],
+        "ingredients": [
+            "Water",
+            "Stearic Acid",
+            "Niacinamide",
+            "Ethylhexyl Methoxycinnamate",
+            "Glycerin",
+            "Phenoxyethanol",
+            "Fragrance",
+            "BHT",
+            "EDTA"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Ethylhexyl Methoxycinnamate",
+                "reason": "UV filter linked to endocrine disruption",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            },
+            {
+                "name": "BHT",
+                "reason": "synthetic preservative",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Use a simple moisturizer + separate mineral sunscreen instead",
+        "alternative_brand": "Re'equil Ultra Matte Dry Touch Sunscreen",
+        "confidence_source": "verified",
+        "notes": "Combination cream with questionable UV filters"
+    },
+    {
+        "item_name": "Lakme Peach Milk Moisturizer",
+        "brand": "Lakme",
+        "category": "personal_care",
+        "aliases": [
+            "lakme moisturizer",
+            "lakme peach milk",
+            "lakme lotion"
+        ],
+        "ingredients": [
+            "Water",
+            "Mineral Oil",
+            "Glycerin",
+            "Stearic Acid",
+            "Cetyl Alcohol",
+            "Fragrance",
+            "Methylparaben",
+            "Propylparaben",
+            "BHT"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Mineral Oil",
+                "reason": "petroleum-derived, can clog pores",
+                "risk": "medium"
+            },
+            {
+                "name": "Methylparaben",
+                "reason": "may affect hormone balance",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Choose a plant-oil based moisturizer without parabens",
+        "alternative_brand": "Plum E-Luminence Face Moisturizer",
+        "confidence_source": "verified",
+        "notes": "Mineral oil and parabens are the main concerns"
+    },
+    {
+        "item_name": "Nivea Soft Cream",
+        "brand": "Nivea",
+        "category": "personal_care",
+        "aliases": [
+            "nivea cream",
+            "nivea soft",
+            "nivea moisturizer",
+            "nivea body cream"
+        ],
+        "ingredients": [
+            "Water",
+            "Caprylic/Capric Triglyceride",
+            "Glycerin",
+            "Alcohol Denat",
+            "Dimethicone",
+            "Cera Microcristallina",
+            "Glyceryl Stearate",
+            "Fragrance",
+            "Phenoxyethanol"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemical mixture",
+                "risk": "medium"
+            },
+            {
+                "name": "Alcohol Denat",
+                "reason": "drying agent that can irritate sensitive skin",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Relatively gentle. For fragrance-free, try alternatives",
+        "alternative_brand": "CeraVe Moisturizing Cream",
+        "confidence_source": "verified",
+        "notes": "Milder than many Indian market creams"
+    },
+    {
+        "item_name": "Sunsilk Hair Fall Solution Shampoo",
+        "brand": "Sunsilk",
+        "category": "personal_care",
+        "aliases": [
+            "sunsilk shampoo",
+            "sunsilk hair fall",
+            "sunsilk pink shampoo"
+        ],
+        "ingredients": [
+            "Water",
+            "Sodium Laureth Sulfate",
+            "Cocamidopropyl Betaine",
+            "Fragrance",
+            "Dimethicone",
+            "DMDM Hydantoin",
+            "Sodium Chloride",
+            "Citric Acid"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Laureth Sulfate",
+                "reason": "can strip natural oils with frequent use",
+                "risk": "medium"
+            },
+            {
+                "name": "DMDM Hydantoin",
+                "reason": "formaldehyde-releasing preservative",
+                "risk": "high"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Switch to a sulfate-free shampoo without formaldehyde releasers",
+        "alternative_brand": "WOW Apple Cider Vinegar Shampoo",
+        "confidence_source": "verified",
+        "notes": "DMDM Hydantoin is a formaldehyde releaser - serious concern"
+    },
+    {
+        "item_name": "Clinic Plus Strong & Long Shampoo",
+        "brand": "Clinic Plus",
+        "category": "personal_care",
+        "aliases": [
+            "clinic plus shampoo",
+            "clinic plus",
+            "clinic plus strong and long"
+        ],
+        "ingredients": [
+            "Water",
+            "Sodium Laureth Sulfate",
+            "Dimethicone",
+            "Cocamidopropyl Betaine",
+            "Fragrance",
+            "Sodium Chloride",
+            "DMDM Hydantoin",
+            "Glycol Distearate"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "DMDM Hydantoin",
+                "reason": "formaldehyde-releasing preservative",
+                "risk": "high"
+            },
+            {
+                "name": "Sodium Laureth Sulfate",
+                "reason": "can strip natural oils",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Switch to a sulfate-free, preservative-safe shampoo",
+        "alternative_brand": "Mamaearth Onion Shampoo",
+        "confidence_source": "verified",
+        "notes": "Very common in India but contains formaldehyde-releasing preservative"
+    },
+    {
+        "item_name": "TRESemme Keratin Smooth Shampoo",
+        "brand": "TRESemme",
+        "category": "personal_care",
+        "aliases": [
+            "tresemme shampoo",
+            "tresemme keratin",
+            "tresemme smooth"
+        ],
+        "ingredients": [
+            "Water",
+            "Sodium Laureth Sulfate",
+            "Cocamidopropyl Betaine",
+            "Fragrance",
+            "Dimethicone",
+            "DMDM Hydantoin",
+            "Sodium Chloride",
+            "Guar Hydroxypropyltrimonium Chloride"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "DMDM Hydantoin",
+                "reason": "formaldehyde-releasing preservative",
+                "risk": "high"
+            },
+            {
+                "name": "Sodium Laureth Sulfate",
+                "reason": "can strip natural oils",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Choose a keratin shampoo without DMDM Hydantoin",
+        "alternative_brand": "Bare Anatomy Expert Shampoo",
+        "confidence_source": "verified",
+        "notes": "Subject of class action lawsuits over DMDM Hydantoin"
+    },
+    {
+        "item_name": "Dove Shampoo Intense Repair",
+        "brand": "Dove",
+        "category": "personal_care",
+        "aliases": [
+            "dove shampoo",
+            "dove intense repair",
+            "dove hair shampoo"
+        ],
+        "ingredients": [
+            "Water",
+            "Sodium Laureth Sulfate",
+            "Cocamidopropyl Betaine",
+            "Fragrance",
+            "Dimethicone",
+            "Glycol Distearate",
+            "DMDM Hydantoin",
+            "Guar Hydroxypropyltrimonium Chloride"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "DMDM Hydantoin",
+                "reason": "formaldehyde-releasing preservative",
+                "risk": "high"
+            },
+            {
+                "name": "Sodium Laureth Sulfate",
+                "reason": "can strip natural oils",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Switch to a sulfate-free Dove variant or another brand",
+        "alternative_brand": "Love Beauty and Planet Shampoo",
+        "confidence_source": "verified",
+        "notes": "Dove soap is gentler than Dove shampoo - different formulation"
+    },
+    {
+        "item_name": "Mamaearth Ubtan Face Wash",
+        "brand": "Mamaearth",
+        "category": "personal_care",
+        "aliases": [
+            "mamaearth face wash",
+            "mamaearth ubtan",
+            "mamaearth ubtan face wash"
+        ],
+        "ingredients": [
+            "Water",
+            "Cocamidopropyl Betaine",
+            "Turmeric Extract",
+            "Saffron Extract",
+            "Glycerin",
+            "Walnut Shell Powder",
+            "Fragrance",
+            "Phenoxyethanol"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals even in natural brands",
+                "risk": "medium"
+            },
+            {
+                "name": "Walnut Shell Powder",
+                "reason": "can cause micro-tears on skin if scrubbed hard",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Decent option - would be better without synthetic fragrance",
+        "alternative_brand": "Plum Green Tea Face Wash",
+        "confidence_source": "verified",
+        "notes": "Mamaearth uses natural ingredients but still adds synthetic fragrance"
+    },
+    {
+        "item_name": "Biotique Bio Neem Face Wash",
+        "brand": "Biotique",
+        "category": "personal_care",
+        "aliases": [
+            "biotique face wash",
+            "biotique neem",
+            "biotique bio neem"
+        ],
+        "ingredients": [
+            "Water",
+            "Neem Extract",
+            "Honey",
+            "Soap Nut Extract",
+            "Fragrance",
+            "Sodium Lauryl Sulfate",
+            "Methylparaben"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Lauryl Sulfate",
+                "reason": "strips natural oils, can irritate",
+                "risk": "medium"
+            },
+            {
+                "name": "Methylparaben",
+                "reason": "may affect hormone balance",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Choose a truly sulfate-free and paraben-free neem face wash",
+        "alternative_brand": "Himalaya Neem Face Wash (paraben-free variant)",
+        "confidence_source": "verified",
+        "notes": "Marketed as natural but contains SLS and parabens"
+    },
+    {
+        "item_name": "Maggi 2-Minute Noodles",
+        "brand": "Maggi",
+        "category": "food",
+        "aliases": [
+            "maggi",
+            "maggi noodles",
+            "maggi masala noodles",
+            "maggi 2 minute"
+        ],
+        "ingredients": [
+            "Wheat Flour",
+            "Palm Oil",
+            "Salt",
+            "Sugar",
+            "Onion Powder",
+            "Spices",
+            "Hydrolyzed Groundnut Protein",
+            "MSG (E621)",
+            "Citric Acid",
+            "TBHQ"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "MSG",
+                "reason": "flavor enhancer some people are sensitive to",
+                "risk": "low"
+            },
+            {
+                "name": "TBHQ",
+                "reason": "preservative linked to immune system effects at high doses",
+                "risk": "medium"
+            },
+            {
+                "name": "Palm Oil",
+                "reason": "high in saturated fat",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Limit to occasional consumption. Try healthier noodle alternatives",
+        "alternative_brand": "Atta Noodles or homemade noodles",
+        "confidence_source": "verified",
+        "notes": "High sodium (1500mg+ per serving). Was temporarily banned in India in 2015 over lead concerns"
+    },
+    {
+        "item_name": "Bournvita Health Drink",
+        "brand": "Bournvita",
+        "category": "food",
+        "aliases": [
+            "bournvita",
+            "bournvita powder",
+            "cadbury bournvita"
+        ],
+        "ingredients": [
+            "Sugar",
+            "Cocoa Powder",
+            "Malt Extract",
+            "Milk Solids",
+            "Vitamins",
+            "Minerals",
+            "Emulsifier (E322)",
+            "Raising Agent",
+            "Salt"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sugar",
+                "reason": "first ingredient - very high sugar content",
+                "risk": "high"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Mix cocoa powder with milk instead for same taste with less sugar",
+        "alternative_brand": "Plain cocoa powder + honey",
+        "confidence_source": "verified",
+        "notes": "Sugar is the #1 ingredient. Lost 'health drink' label from FSSAI in 2023"
+    },
+    {
+        "item_name": "Parle-G Biscuits",
+        "brand": "Parle",
+        "category": "food",
+        "aliases": [
+            "parle g",
+            "parle-g",
+            "parle g biscuit",
+            "parle glucose"
+        ],
+        "ingredients": [
+            "Wheat Flour",
+            "Sugar",
+            "Edible Vegetable Oil (Palm)",
+            "Invert Syrup",
+            "Leavening Agents",
+            "Milk Solids",
+            "Salt",
+            "Emulsifier (E322)"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Palm Oil",
+                "reason": "high in saturated fat",
+                "risk": "low"
+            },
+            {
+                "name": "Sugar",
+                "reason": "significant sugar content per serving",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Fine as an occasional snack. Not ideal for daily consumption",
+        "alternative_brand": "Digestive biscuits or oat cookies",
+        "confidence_source": "verified",
+        "notes": "Relatively simple ingredients compared to other biscuits"
+    },
+    {
+        "item_name": "Kurkure Masala Munch",
+        "brand": "Kurkure",
+        "category": "food",
+        "aliases": [
+            "kurkure",
+            "kurkure masala",
+            "kurkure chips"
+        ],
+        "ingredients": [
+            "Rice Meal",
+            "Edible Vegetable Oil (Palm)",
+            "Corn Meal",
+            "Gram Meal",
+            "Spices",
+            "Salt",
+            "Sugar",
+            "MSG (E621)",
+            "Tartaric Acid",
+            "Artificial Color"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "MSG",
+                "reason": "flavor enhancer some people are sensitive to",
+                "risk": "low"
+            },
+            {
+                "name": "Artificial Color",
+                "reason": "synthetic dyes with no nutritional value",
+                "risk": "medium"
+            },
+            {
+                "name": "Palm Oil",
+                "reason": "high in saturated fat",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Choose baked snacks or roasted options",
+        "alternative_brand": "Too Yumm Multigrain Chips",
+        "confidence_source": "verified",
+        "notes": "Multiple artificial additives. High sodium."
+    },
+    {
+        "item_name": "Haldiram's Aloo Bhujia",
+        "brand": "Haldiram's",
+        "category": "food",
+        "aliases": [
+            "haldirams bhujia",
+            "aloo bhujia",
+            "haldirams namkeen",
+            "haldirams"
+        ],
+        "ingredients": [
+            "Besan",
+            "Potato",
+            "Edible Vegetable Oil (Palm)",
+            "Salt",
+            "Spices",
+            "Asafoetida",
+            "Citric Acid"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Palm Oil",
+                "reason": "high in saturated fat when deep fried",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Relatively clean for a packaged snack. Enjoy in moderation",
+        "alternative_brand": "Homemade bhujia with mustard oil",
+        "confidence_source": "verified",
+        "notes": "Simple ingredients compared to most packaged snacks"
+    },
+    {
+        "item_name": "Amul Butter",
+        "brand": "Amul",
+        "category": "food",
+        "aliases": [
+            "amul butter",
+            "amul makkhan"
+        ],
+        "ingredients": [
+            "Pasteurized Cream",
+            "Common Salt",
+            "Annatto Color"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Clean product with minimal ingredients. Good choice",
+        "alternative_brand": null,
+        "confidence_source": "verified",
+        "notes": "One of the cleanest packaged butter options in India"
+    },
+    {
+        "item_name": "Tropicana Mixed Fruit Juice",
+        "brand": "Tropicana",
+        "category": "food",
+        "aliases": [
+            "tropicana juice",
+            "tropicana mixed fruit",
+            "tropicana"
+        ],
+        "ingredients": [
+            "Water",
+            "Concentrated Fruit Juices",
+            "Sugar",
+            "Citric Acid",
+            "Natural Flavors",
+            "Ascorbic Acid"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sugar",
+                "reason": "added sugar on top of natural fruit sugar",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Eat whole fruits instead for fiber and less sugar",
+        "alternative_brand": "Raw Pressery Cold Pressed Juice",
+        "confidence_source": "verified",
+        "notes": "Not 100% juice - contains added sugar and water"
+    },
+    {
+        "item_name": "Kissan Tomato Ketchup",
+        "brand": "Kissan",
+        "category": "food",
+        "aliases": [
+            "kissan ketchup",
+            "kissan tomato sauce",
+            "kissan sauce"
+        ],
+        "ingredients": [
+            "Tomato Paste",
+            "Sugar",
+            "Water",
+            "Acetic Acid",
+            "Salt",
+            "Onion Powder",
+            "Spices",
+            "Thickener"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sugar",
+                "reason": "second ingredient - high sugar for a condiment",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Use in moderation. Try homemade tomato chutney for less sugar",
+        "alternative_brand": "Homemade tomato chutney",
+        "confidence_source": "verified",
+        "notes": "High sugar content for a savory condiment"
+    },
+    {
+        "item_name": "Good Knight Mosquito Repellent",
+        "brand": "Good Knight",
+        "category": "household",
+        "aliases": [
+            "good knight",
+            "goodknight",
+            "good knight liquid",
+            "good knight mosquito"
+        ],
+        "ingredients": [
+            "Transfluthrin",
+            "Deodorized Kerosene Oil",
+            "Fragrance"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Transfluthrin",
+                "reason": "synthetic pyrethroid insecticide, respiratory irritant",
+                "risk": "high"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals added to mask pesticide smell",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Use mosquito nets or natural repellents when possible",
+        "alternative_brand": "Mosquito nets or citronella-based repellents",
+        "confidence_source": "verified",
+        "notes": "Chemical insecticide that affects indoor air quality, especially concerning for children and pregnant women"
+    },
+    {
+        "item_name": "Mortein Mosquito Coil",
+        "brand": "Mortein",
+        "category": "household",
+        "aliases": [
+            "mortein",
+            "mortein coil",
+            "mosquito coil"
+        ],
+        "ingredients": [
+            "D-Allethrin",
+            "Sawdust",
+            "Starch",
+            "Fragrance"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "D-Allethrin",
+                "reason": "insecticide that affects respiratory system",
+                "risk": "high"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Mosquito coil smoke is equivalent to 100 cigarettes. Use nets instead",
+        "alternative_brand": "Mosquito nets or electric bat",
+        "confidence_source": "verified",
+        "notes": "WHO warns that burning mosquito coils indoors is a health risk"
+    },
+    {
+        "item_name": "Harpic Toilet Cleaner",
+        "brand": "Harpic",
+        "category": "household",
+        "aliases": [
+            "harpic",
+            "harpic toilet cleaner",
+            "harpic power plus"
+        ],
+        "ingredients": [
+            "Hydrochloric Acid",
+            "Surfactants",
+            "Fragrance",
+            "Color"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Hydrochloric Acid",
+                "reason": "highly corrosive, dangerous if inhaled or touched skin",
+                "risk": "high"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Use with gloves and ventilation. Try vinegar + baking soda for regular cleaning",
+        "alternative_brand": "Baking soda + vinegar for regular cleaning",
+        "confidence_source": "verified",
+        "notes": "Effective but highly corrosive. Keep away from children."
+    },
+    {
+        "item_name": "Lizol Floor Cleaner",
+        "brand": "Lizol",
+        "category": "household",
+        "aliases": [
+            "lizol",
+            "lizol floor cleaner",
+            "lizol surface cleaner"
+        ],
+        "ingredients": [
+            "Benzalkonium Chloride",
+            "Pine Oil",
+            "Fragrance",
+            "Surfactants",
+            "Color"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Benzalkonium Chloride",
+                "reason": "can irritate skin and respiratory system",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Dilute well and ensure ventilation. Consider natural alternatives",
+        "alternative_brand": "Koparo Clean Floor Cleaner",
+        "confidence_source": "verified",
+        "notes": "Quaternary ammonium compound - use with ventilation"
+    },
+    {
+        "item_name": "Vim Dishwash Gel",
+        "brand": "Vim",
+        "category": "household",
+        "aliases": [
+            "vim",
+            "vim dishwash",
+            "vim gel",
+            "vim liquid"
+        ],
+        "ingredients": [
+            "Water",
+            "Sodium Laureth Sulfate",
+            "Sodium Dodecyl Benzene Sulfonate",
+            "Fragrance",
+            "Color",
+            "Preservatives"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Laureth Sulfate",
+                "reason": "can dry out skin with regular contact",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Wear gloves while washing dishes. Try plant-based alternatives",
+        "alternative_brand": "Koparo Dishwash Liquid",
+        "confidence_source": "verified",
+        "notes": "Direct skin contact during dishwashing is a concern"
+    },
+    {
+        "item_name": "Surf Excel Detergent",
+        "brand": "Surf Excel",
+        "category": "household",
+        "aliases": [
+            "surf excel",
+            "surf excel matic",
+            "surf excel detergent"
+        ],
+        "ingredients": [
+            "Sodium Linear Alkylbenzene Sulfonate",
+            "Sodium Carbonate",
+            "Sodium Sulfate",
+            "Optical Brighteners",
+            "Fragrance",
+            "Enzymes"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Optical Brighteners",
+                "reason": "chemical residue stays on clothes, contacts skin",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals that contact skin via clothes",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Use fragrance-free detergent especially for baby clothes and underwear",
+        "alternative_brand": "The Better Home Plant-Based Detergent",
+        "confidence_source": "verified",
+        "notes": "Chemical residue remains on clothes after washing"
+    },
+    {
+        "item_name": "Dabur Honey",
+        "brand": "Dabur",
+        "category": "food",
+        "aliases": [
+            "dabur honey",
+            "dabur pure honey"
+        ],
+        "ingredients": [
+            "Honey"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Clean single-ingredient product",
+        "alternative_brand": null,
+        "confidence_source": "verified",
+        "notes": "Has passed multiple purity tests. Simple and clean."
+    },
+    {
+        "item_name": "MDH Chana Masala",
+        "brand": "MDH",
+        "category": "food",
+        "aliases": [
+            "mdh masala",
+            "mdh chana masala",
+            "mdh spices"
+        ],
+        "ingredients": [
+            "Coriander",
+            "Red Chili",
+            "Salt",
+            "Cumin",
+            "Turmeric",
+            "Dried Ginger",
+            "Black Pepper",
+            "Cassia",
+            "Dried Fenugreek",
+            "Pomegranate Seeds"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Clean spice blend with no additives",
+        "alternative_brand": null,
+        "confidence_source": "verified",
+        "notes": "Simple spice blend. Some MDH products faced ETO contamination in export markets - check packaging date."
+    },
+    {
+        "item_name": "Revlon Colorstay Foundation",
+        "brand": "Revlon",
+        "category": "personal_care",
+        "aliases": [
+            "revlon foundation",
+            "revlon colorstay"
+        ],
+        "ingredients": [
+            "Water",
+            "Cyclopentasiloxane",
+            "Titanium Dioxide",
+            "Dimethicone",
+            "Trimethylsiloxysilicate",
+            "PEG-10 Dimethicone",
+            "Fragrance",
+            "BHT",
+            "Methylparaben",
+            "Propylparaben"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Methylparaben",
+                "reason": "may affect hormone balance",
+                "risk": "medium"
+            },
+            {
+                "name": "Propylparaben",
+                "reason": "linked to endocrine disruption",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals applied to face daily",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Choose a paraben-free, fragrance-free foundation",
+        "alternative_brand": "Maybelline Fit Me (paraben-free)",
+        "confidence_source": "verified",
+        "notes": "Applied to face daily - parabens and fragrance are concerning for daily facial use"
+    },
+    {
+        "item_name": "Vaseline Petroleum Jelly",
+        "brand": "Vaseline",
+        "category": "personal_care",
+        "aliases": [
+            "vaseline",
+            "petroleum jelly",
+            "vaseline jelly"
+        ],
+        "ingredients": [
+            "Petrolatum"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Simple single-ingredient product. Safe for most uses",
+        "alternative_brand": "Organic coconut oil (for lip/skin moisture)",
+        "confidence_source": "verified",
+        "notes": "Pure petroleum jelly is actually one of the safest products - single ingredient, no additives"
+    },
+    {
+        "item_name": "Colgate MaxFresh Toothpaste",
+        "brand": "Colgate",
+        "category": "personal_care",
+        "aliases": [
+            "colgate maxfresh",
+            "colgate max fresh",
+            "colgate blue toothpaste"
+        ],
+        "ingredients": [
+            "Sorbitol",
+            "Water",
+            "Hydrated Silica",
+            "Sodium Lauryl Sulfate",
+            "Flavor",
+            "PVM/MA Copolymer",
+            "Sodium Saccharin",
+            "Blue 1"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Lauryl Sulfate",
+                "reason": "can cause mouth ulcers in sensitive people",
+                "risk": "medium"
+            },
+            {
+                "name": "Blue 1",
+                "reason": "artificial color unnecessary in toothpaste",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Try an SLS-free toothpaste",
+        "alternative_brand": "Sensodyne (SLS-free variants)",
+        "confidence_source": "verified",
+        "notes": "SLS is a common cause of canker sores"
+    },
+    {
+        "item_name": "Sensodyne Repair & Protect Toothpaste",
+        "brand": "Sensodyne",
+        "category": "personal_care",
+        "aliases": [
+            "sensodyne",
+            "sensodyne toothpaste",
+            "sensodyne repair"
+        ],
+        "ingredients": [
+            "Glycerin",
+            "Calcium Sodium Phosphosilicate",
+            "PEG-8",
+            "Silica",
+            "Sodium Lauryl Sulfate",
+            "Titanium Dioxide",
+            "Flavor"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Lauryl Sulfate",
+                "reason": "may irritate sensitive mouths",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Good option for sensitive teeth. Try Sensodyne SLS-free variant for even better",
+        "alternative_brand": "Sensodyne Pronamel (SLS-free)",
+        "confidence_source": "verified",
+        "notes": "Some Sensodyne variants are SLS-free - check the label"
+    },
+    {
+        "item_name": "Patanjali Dant Kanti Toothpaste",
+        "brand": "Patanjali",
+        "category": "personal_care",
+        "aliases": [
+            "patanjali toothpaste",
+            "dant kanti",
+            "patanjali dant kanti"
+        ],
+        "ingredients": [
+            "Calcium Carbonate",
+            "Sorbitol",
+            "Water",
+            "Neem Extract",
+            "Babool Extract",
+            "Clove Oil",
+            "Pudina Satva",
+            "Sodium Lauryl Sulfate",
+            "Flavor"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Lauryl Sulfate",
+                "reason": "can cause mouth irritation",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Good herbal ingredients. Would be better without SLS",
+        "alternative_brand": "Himalaya Complete Care (SLS-free)",
+        "confidence_source": "verified",
+        "notes": "Natural base but still uses SLS"
+    },
+    {
+        "item_name": "Nescafe Classic Coffee",
+        "brand": "Nescafe",
+        "category": "food",
+        "aliases": [
+            "nescafe",
+            "nescafe coffee",
+            "nescafe classic",
+            "nescafe instant"
+        ],
+        "ingredients": [
+            "Instant Coffee"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Clean single-ingredient product",
+        "alternative_brand": null,
+        "confidence_source": "verified",
+        "notes": "Pure instant coffee. The 3-in-1 sachets are different - they have sugar and creamer."
+    },
+    {
+        "item_name": "Nescafe 3-in-1 Coffee",
+        "brand": "Nescafe",
+        "category": "food",
+        "aliases": [
+            "nescafe 3 in 1",
+            "nescafe sachet",
+            "nescafe premix"
+        ],
+        "ingredients": [
+            "Sugar",
+            "Creamer (Glucose Syrup, Hydrogenated Palm Oil)",
+            "Instant Coffee",
+            "Stabilizer"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sugar",
+                "reason": "first ingredient - mostly sugar",
+                "risk": "medium"
+            },
+            {
+                "name": "Hydrogenated Palm Oil",
+                "reason": "contains trans fats",
+                "risk": "high"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Make your own coffee with real milk instead",
+        "alternative_brand": "Nescafe Classic + milk",
+        "confidence_source": "verified",
+        "notes": "Trans fats from hydrogenated oil. Sugar is the main ingredient, not coffee."
+    },
+    {
+        "item_name": "Lay's Classic Salted Chips",
+        "brand": "Lay's",
+        "category": "food",
+        "aliases": [
+            "lays chips",
+            "lays salted",
+            "lays classic",
+            "lays"
+        ],
+        "ingredients": [
+            "Potato",
+            "Edible Vegetable Oil (Palm)",
+            "Salt"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Palm Oil",
+                "reason": "high in saturated fat when used for frying",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Relatively clean ingredient list for a chip. Enjoy in moderation",
+        "alternative_brand": "Baked chips or roasted makhana",
+        "confidence_source": "verified",
+        "notes": "Simple 3-ingredient product. Better than most packaged snacks."
+    },
+    {
+        "item_name": "Britannia Good Day Biscuits",
+        "brand": "Britannia",
+        "category": "food",
+        "aliases": [
+            "good day",
+            "good day biscuits",
+            "britannia good day"
+        ],
+        "ingredients": [
+            "Refined Wheat Flour",
+            "Sugar",
+            "Edible Vegetable Fat (Palm)",
+            "Butter",
+            "Milk Solids",
+            "Invert Sugar Syrup",
+            "Leavening Agents",
+            "Emulsifier",
+            "Artificial Flavor"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Artificial Flavor",
+                "reason": "synthetic flavoring with undisclosed ingredients",
+                "risk": "low"
+            },
+            {
+                "name": "Palm Oil",
+                "reason": "high in saturated fat",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Fine as an occasional treat. Not for daily snacking",
+        "alternative_brand": "Homemade cookies",
+        "confidence_source": "verified",
+        "notes": "Moderate ingredients for a biscuit. Artificial flavor is the only concern."
+    },
+    {
+        "item_name": "Cadbury Dairy Milk Chocolate",
+        "brand": "Cadbury",
+        "category": "food",
+        "aliases": [
+            "dairy milk",
+            "cadbury chocolate",
+            "cadbury dairy milk",
+            "dairy milk chocolate"
+        ],
+        "ingredients": [
+            "Sugar",
+            "Cocoa Butter",
+            "Cocoa Solids",
+            "Milk Solids",
+            "Emulsifier (E442, E476)",
+            "Flavoring"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sugar",
+                "reason": "first ingredient - high sugar",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Relatively clean for a chocolate. Choose dark chocolate for less sugar",
+        "alternative_brand": "Amul Dark Chocolate",
+        "confidence_source": "verified",
+        "notes": "Simple chocolate ingredients. Sugar is the main concern."
+    },
+    {
+        "item_name": "Himalaya Lip Balm",
+        "brand": "Himalaya",
+        "category": "personal_care",
+        "aliases": [
+            "himalaya lip balm",
+            "himalaya lip care"
+        ],
+        "ingredients": [
+            "Castor Oil",
+            "Beeswax",
+            "Coconut Oil",
+            "Cocoa Butter",
+            "Wheat Germ Oil",
+            "Carrot Seed Oil"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Excellent clean product with natural ingredients",
+        "alternative_brand": null,
+        "confidence_source": "verified",
+        "notes": "One of the cleanest lip balms available in India. No fragrance, no preservatives."
+    },
+    {
+        "item_name": "Parachute Coconut Oil",
+        "brand": "Parachute",
+        "category": "personal_care",
+        "aliases": [
+            "parachute oil",
+            "parachute coconut oil",
+            "parachute hair oil"
+        ],
+        "ingredients": [
+            "Coconut Oil"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Pure single-ingredient product. One of the safest hair oils",
+        "alternative_brand": null,
+        "confidence_source": "verified",
+        "notes": "100% coconut oil. No additives."
+    },
+    {
+        "item_name": "Set Wet Hair Gel",
+        "brand": "Set Wet",
+        "category": "personal_care",
+        "aliases": [
+            "set wet",
+            "set wet gel",
+            "set wet hair gel"
+        ],
+        "ingredients": [
+            "Water",
+            "PVP",
+            "Carbomer",
+            "Triethanolamine",
+            "Fragrance",
+            "DMDM Hydantoin",
+            "Color"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "DMDM Hydantoin",
+                "reason": "formaldehyde-releasing preservative",
+                "risk": "high"
+            },
+            {
+                "name": "Triethanolamine",
+                "reason": "can form carcinogenic nitrosamines",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "high",
+        "recommendation": "Switch to a natural hair styling product",
+        "alternative_brand": "Ustraa Hair Cream",
+        "confidence_source": "verified",
+        "notes": "DMDM Hydantoin is a serious concern in a leave-on product"
+    },
+    {
+        "item_name": "Boroline Antiseptic Cream",
+        "brand": "Boroline",
+        "category": "personal_care",
+        "aliases": [
+            "boroline",
+            "boroline cream",
+            "boroline antiseptic"
+        ],
+        "ingredients": [
+            "Boric Acid",
+            "Zinc Oxide",
+            "Lanolin",
+            "Perfume"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Boric Acid",
+                "reason": "can be toxic if used on large areas or broken skin",
+                "risk": "medium"
+            },
+            {
+                "name": "Perfume",
+                "reason": "synthetic fragrance",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Safe for occasional use on small areas. Avoid on large wounds",
+        "alternative_brand": "Himalaya Multipurpose Cream",
+        "confidence_source": "verified",
+        "notes": "Classic Indian product. Simple formula. Use sparingly."
+    },
+    {
+        "item_name": "Dabur Red Toothpaste",
+        "brand": "Dabur",
+        "category": "personal_care",
+        "aliases": [
+            "dabur red",
+            "dabur red paste",
+            "dabur lal dant manjan"
+        ],
+        "ingredients": [
+            "Calcium Carbonate",
+            "Water",
+            "Sorbitol",
+            "Laung Oil",
+            "Pudina Satva",
+            "Tomar Beej",
+            "Maricha",
+            "Pippali",
+            "Sodium Lauryl Sulfate",
+            "Flavor"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sodium Lauryl Sulfate",
+                "reason": "can irritate sensitive mouths",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Good herbal option. Only SLS is a minor concern",
+        "alternative_brand": "Vicco Vajradanti (SLS-free)",
+        "confidence_source": "verified",
+        "notes": "Strong herbal ingredients. Better than most mainstream toothpastes."
+    },
+    {
+        "item_name": "WOW Onion Shampoo",
+        "brand": "WOW",
+        "category": "personal_care",
+        "aliases": [
+            "wow shampoo",
+            "wow onion shampoo",
+            "wow skin science shampoo"
+        ],
+        "ingredients": [
+            "Water",
+            "Cocamidopropyl Betaine",
+            "Sodium Cocoyl Isethionate",
+            "Onion Extract",
+            "Red Onion Seed Oil",
+            "Saw Palmetto",
+            "Pro Vitamin B5",
+            "Glycerin"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Clean sulfate-free shampoo. Good choice",
+        "alternative_brand": null,
+        "confidence_source": "verified",
+        "notes": "Truly sulfate-free and paraben-free. One of the cleaner options in India."
+    },
+    {
+        "item_name": "Mama Earth Onion Shampoo",
+        "brand": "Mamaearth",
+        "category": "personal_care",
+        "aliases": [
+            "mamaearth shampoo",
+            "mamaearth onion shampoo",
+            "mama earth shampoo",
+            "mamaearth onion"
+        ],
+        "ingredients": [
+            "Water",
+            "Sodium Cocoyl Isethionate",
+            "Cocamidopropyl Betaine",
+            "Onion Oil",
+            "Plant Keratin",
+            "Glycerin",
+            "Fragrance",
+            "Phenoxyethanol"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals even in natural brands",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "low",
+        "recommendation": "Sulfate-free and mostly clean. Fragrance is the only minor concern",
+        "alternative_brand": "WOW Onion Shampoo (fragrance-free)",
+        "confidence_source": "verified",
+        "notes": "Popular in India. Good formula but still uses synthetic fragrance."
+    },
+    {
+        "item_name": "Bajaj Almond Drops Hair Oil",
+        "brand": "Bajaj",
+        "category": "personal_care",
+        "aliases": [
+            "bajaj almond drops",
+            "bajaj hair oil",
+            "bajaj almond oil"
+        ],
+        "ingredients": [
+            "Mineral Oil",
+            "Sweet Almond Oil",
+            "Fragrance",
+            "Vitamin E",
+            "BHT"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Mineral Oil",
+                "reason": "petroleum-derived, sits on hair surface without nourishing",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            },
+            {
+                "name": "BHT",
+                "reason": "synthetic preservative",
+                "risk": "low"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Use pure almond oil instead for real nourishment",
+        "alternative_brand": "Pure cold-pressed almond oil",
+        "confidence_source": "verified",
+        "notes": "Mineral oil is the first ingredient - almond oil is only a small percentage"
+    },
+    {
+        "item_name": "Dabur Amla Hair Oil",
+        "brand": "Dabur",
+        "category": "personal_care",
+        "aliases": [
+            "dabur amla oil",
+            "dabur amla",
+            "amla hair oil",
+            "dabur amla hair oil"
+        ],
+        "ingredients": [
+            "Mineral Oil",
+            "Amla Extract",
+            "Fragrance",
+            "BHT",
+            "Color"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Mineral Oil",
+                "reason": "petroleum-derived, not nourishing",
+                "risk": "medium"
+            },
+            {
+                "name": "Fragrance",
+                "reason": "undisclosed chemicals",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Make fresh amla oil at home or buy cold-pressed amla oil",
+        "alternative_brand": "Kama Ayurveda Bringadi Oil",
+        "confidence_source": "verified",
+        "notes": "Mineral oil base with small amount of amla extract. Marketing vs reality gap."
+    },
+    {
+        "item_name": "MTR Ready to Eat Poha",
+        "brand": "MTR",
+        "category": "food",
+        "aliases": [
+            "mtr poha",
+            "mtr ready to eat",
+            "mtr breakfast"
+        ],
+        "ingredients": [
+            "Flattened Rice",
+            "Onion",
+            "Edible Vegetable Oil",
+            "Green Chili",
+            "Curry Leaves",
+            "Mustard Seeds",
+            "Turmeric",
+            "Salt",
+            "Sugar",
+            "Citric Acid"
+        ],
+        "flagged_ingredients": [],
+        "risk_level": "low",
+        "recommendation": "Clean ingredient list for a ready-to-eat product",
+        "alternative_brand": null,
+        "confidence_source": "verified",
+        "notes": "Simple, recognizable ingredients. Good for a packaged meal."
+    },
+    {
+        "item_name": "Real Fruit Power Mixed Fruit Juice",
+        "brand": "Real",
+        "category": "food",
+        "aliases": [
+            "real juice",
+            "real fruit juice",
+            "real mixed fruit"
+        ],
+        "ingredients": [
+            "Water",
+            "Sugar",
+            "Mixed Fruit Pulp",
+            "Acidity Regulator",
+            "Antioxidant",
+            "Natural Color"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Sugar",
+                "reason": "added sugar on top of fruit sugar",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Eat whole fruits instead. If drinking juice, choose 100% juice",
+        "alternative_brand": "Fresh-squeezed juice or whole fruits",
+        "confidence_source": "verified",
+        "notes": "Water and sugar are the main ingredients, not fruit"
+    },
+    {
+        "item_name": "Whisper Ultra Clean Pads",
+        "brand": "Whisper",
+        "category": "personal_care",
+        "aliases": [
+            "whisper pads",
+            "whisper ultra",
+            "whisper sanitary pads"
+        ],
+        "ingredients": [
+            "Super Absorbent Polymer",
+            "Cellulose",
+            "Polyethylene",
+            "Fragrance",
+            "Chlorine-bleached Pulp"
+        ],
+        "flagged_ingredients": [
+            {
+                "name": "Fragrance",
+                "reason": "synthetic chemicals in contact with intimate area",
+                "risk": "medium"
+            },
+            {
+                "name": "Chlorine-bleached Pulp",
+                "reason": "may contain trace dioxins from bleaching process",
+                "risk": "medium"
+            }
+        ],
+        "risk_level": "medium",
+        "recommendation": "Try unbleached, fragrance-free pads or organic cotton options",
+        "alternative_brand": "Carmesi Organic Cotton Pads",
+        "confidence_source": "verified",
+        "notes": "Fragrance in intimate products is particularly concerning"
+    }
+]
