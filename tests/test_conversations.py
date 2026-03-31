@@ -37,7 +37,7 @@ class TestCoreProductChecks:
     async def test_known_product_dettol_avoid(self, sim):
         await sim.send("Is Dettol soap safe?")
         assert sim.reply_contains("score")
-        assert sim.reply_contains("avoid")
+        assert sim.reply_contains("caution")  # Score 40 = "Use with caution" (aligned)
         assert sim.feedback_buttons_sent()
 
     @pytest.mark.asyncio

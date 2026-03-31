@@ -1,7 +1,5 @@
 import json
 
-import pytest
-
 from app.core.response_formatter import parse_and_format, _extract_json, _strip_markdown
 
 
@@ -89,9 +87,10 @@ class TestScoreInFormatter:
     def test_product_check_with_score(self, sample_ai_json_response):
         result = parse_and_format(sample_ai_json_response, product_score=85)
         assert "Score: 85/100 (Excellent)" in result
-        # Score should appear before verdict
+        # Score 85 overrides verdict to "Safe" (aligned)
+        assert "Safe" in result
         score_pos = result.find("Score:")
-        verdict_pos = result.find("Use with caution")
+        verdict_pos = result.find("Safe")
         assert score_pos < verdict_pos
 
     def test_product_check_without_score(self, sample_ai_json_response):

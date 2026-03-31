@@ -59,9 +59,18 @@ def _build_whatsapp_message(
     if product_score is not None and data.type == "product_check":
         parts.append(format_score_line(product_score))
 
-    # 2. Verdict line
+    # 2. Verdict line (aligned with score when KB match)
     if data.verdict:
-        verdict_text = VERDICT_EMOJI.get(data.verdict, data.verdict)
+        verdict = data.verdict
+        if product_score is not None:
+            # Override AI verdict to match our deterministic score
+            if product_score >= 80:
+                verdict = "Safe"
+            elif product_score >= 40:
+                verdict = "Use with caution"
+            else:
+                verdict = "Avoid"
+        verdict_text = VERDICT_EMOJI.get(verdict, verdict)
         parts.append(verdict_text)
 
     # 2. Summary (always present)

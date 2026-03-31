@@ -150,17 +150,7 @@ async def get_progress(supabase: Client, user_id: str) -> dict | None:
     scored = [p for p in products if p.get("score") is not None]
 
     if len(scored) < 2:
-        # First product — return milestone only
-        if len(scored) == 1:
-            return {
-                "previous_avg": None,
-                "current_avg": scored[0]["score"],
-                "delta": 0,
-                "total_products": 1,
-                "high_risk_count": 1 if scored[0]["score"] < 40 else 0,
-                "high_risk_removed_since_start": 0,
-                "milestone": "Great start! Keep checking your daily products.",
-            }
+        # Not enough data for progress comparison
         return None
 
     scores = [p["score"] for p in scored]

@@ -31,7 +31,7 @@ class Settings(BaseSettings):
     admin_api_key: str
 
     # Production hardening
-    gemini_timeout_sec: int = 8
+    gemini_timeout_sec: int = 30
     max_image_size_bytes: int = 5_000_000  # 5MB
     rate_limit_per_hour: int = 30
 

@@ -36,6 +36,10 @@ from app.services.knowledge_base import (
     lookup_alternatives,
     lookup_product,
 )
+from app.services.source_context import build_source_context
+from app.services.whatsapp_client import WhatsAppClient
+
+logger = logging.getLogger(__name__)
 
 _AFFIRMATIVES = {
     "yes", "yeah", "yep", "sure", "please", "ok", "okay",
@@ -64,10 +68,6 @@ def _is_footprint_command(text: str) -> bool:
 
 def _is_swap_command(text: str) -> bool:
     return any(kw in text.strip().lower() for kw in _SWAP_KEYWORDS)
-from app.services.source_context import build_source_context
-from app.services.whatsapp_client import WhatsAppClient
-
-logger = logging.getLogger(__name__)
 
 # Contextual error messages
 ERROR_MESSAGES = {
