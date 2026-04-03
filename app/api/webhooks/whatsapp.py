@@ -1,3 +1,6 @@
+import hashlib
+import hmac
+import json
 import logging
 
 from fastapi import APIRouter, BackgroundTasks, Query, Request, Response
@@ -35,9 +38,26 @@ async def receive_message(
     request: Request,
     background_tasks: BackgroundTasks,
 ):
-    # Always return 200 immediately - Meta retries on non-200
+    settings = get_settings()
+
+    # Read raw body first (needed for signature verification)
+    raw_body = await request.body()
+
+    # Verify webhook signature if app_secret is configured
+    if settings.whatsapp_app_secret:
+        signature = request.headers.get("x-hub-signature-256", "")
+        expected = "sha256=" + hmac.new(
+            settings.whatsapp_app_secret.encode(),
+            raw_body,
+            hashlib.sha256,
+        ).hexdigest()
+        if not hmac.compare_digest(signature, expected):
+            logger.warning("Invalid webhook signature - rejecting payload")
+            return {"status": "ok"}  # silent reject
+
+    # Parse the already-read body
     try:
-        body = await request.json()
+        body = json.loads(raw_body)
         payload = WhatsAppWebhook(**body)
     except Exception as e:
         logger.error("Failed to parse WhatsApp webhook payload: %s", e)
@@ -52,7 +72,6 @@ async def receive_message(
     if not sender:
         return {"status": "ok"}
 
-    settings = get_settings()
     whatsapp_client = WhatsAppClient(
         http_client=request.app.state.http_client,
         settings=settings,

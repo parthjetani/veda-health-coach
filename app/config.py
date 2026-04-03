@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     whatsapp_access_token: str
     whatsapp_phone_number_id: str
     whatsapp_verify_token: str
+    whatsapp_app_secret: str = ""  # for webhook signature verification (optional in dev)
     whatsapp_api_version: str = "v21.0"
 
     # Google Gemini
@@ -34,6 +35,9 @@ class Settings(BaseSettings):
     gemini_timeout_sec: int = 30
     max_image_size_bytes: int = 5_000_000  # 5MB
     rate_limit_per_hour: int = 30
+
+    # CORS
+    cors_origins: str = "*"  # comma-separated origins, or "*" for all
 
     # App
     environment: str = "development"

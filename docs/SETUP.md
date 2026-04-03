@@ -200,6 +200,12 @@ SUPABASE_SERVICE_ROLE_KEY=eyJhxxxxxxx
 # Admin
 ADMIN_API_KEY=your-long-random-string
 
+# Security (optional in dev, required in production)
+WHATSAPP_APP_SECRET=your-app-secret
+
+# CORS (optional, defaults to *)
+CORS_ORIGINS=https://yourdomain.com,https://admin.yourdomain.com
+
 # App
 ENVIRONMENT=development
 ```
@@ -208,6 +214,10 @@ Generate a secure admin key:
 ```bash
 python -c "import secrets; print(secrets.token_urlsafe(32))"
 ```
+
+**`WHATSAPP_APP_SECRET`**: Found in Meta App Dashboard > Settings > Basic > App Secret. Used to verify `X-Hub-Signature-256` on incoming webhooks. Optional for development (signature check is skipped if empty), but should be set in production.
+
+**`CORS_ORIGINS`**: Comma-separated list of allowed origins (e.g., `https://yourdomain.com`). Defaults to `*` (allow all). When using wildcard, `allow_credentials` is automatically set to `False` per CORS spec.
 
 > Never put real credentials in `.env.example` - that file gets committed to Git.
 
@@ -223,8 +233,10 @@ uvicorn app.main:app --reload --port 8000
 Verify it's running:
 ```bash
 curl http://localhost:8000/health
-# {"status":"ok"}
+# {"status":"ok","checks":{"server":"ok","database":"ok"}}
 ```
+
+The health check now verifies Supabase connectivity. If the database is unreachable, it returns `{"status":"degraded","checks":{"server":"ok","database":"error"}}`.
 
 Swagger docs available at: http://localhost:8000/docs
 

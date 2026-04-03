@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime, timezone
 
 from supabase import Client
 
@@ -18,22 +19,22 @@ async def get_user_by_whatsapp(supabase: Client, whatsapp_number: str) -> dict |
 
 
 async def get_or_create_user(supabase: Client, whatsapp_number: str) -> dict:
-    user = await get_user_by_whatsapp(supabase, whatsapp_number)
-    if user:
-        return user
-
     result = (
         supabase.table("users")
-        .insert({"whatsapp_number": whatsapp_number})
+        .upsert(
+            {"whatsapp_number": whatsapp_number},
+            on_conflict="whatsapp_number",
+        )
         .execute()
     )
-    logger.info("Created new user for %s", whatsapp_number)
     return result.data[0]
 
 
 async def update_last_active(supabase: Client, user_id: str) -> None:
     try:
-        supabase.table("users").update({"last_active_at": "now()"}).eq("id", user_id).execute()
+        supabase.table("users").update(
+            {"last_active_at": datetime.now(timezone.utc).isoformat()}
+        ).eq("id", user_id).execute()
     except Exception as e:
         logger.error("Failed to update last_active_at for %s: %s", user_id, e)
 
@@ -45,18 +46,11 @@ async def list_users(
 ) -> tuple[list[dict], int]:
     offset = (page - 1) * per_page
 
-    count_result = (
-        supabase.table("users")
-        .select("id", count="exact")
-        .execute()
-    )
-    total = count_result.count or 0
-
     result = (
         supabase.table("users")
-        .select("*")
+        .select("*", count="exact")
         .order("created_at", desc=True)
         .range(offset, offset + per_page - 1)
         .execute()
     )
-    return result.data or [], total
+    return result.data or [], result.count or 0

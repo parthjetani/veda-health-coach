@@ -1,3 +1,4 @@
+import html
 import logging
 
 from supabase import Client
@@ -27,9 +28,8 @@ async def list_health_items(
 ) -> tuple[list[dict], int]:
     offset = (page - 1) * per_page
 
-    # Build query
+    # Single query with count + pagination (was previously two queries)
     query = supabase.table("health_items").select("*", count="exact")
-
     if category:
         query = query.eq("category", category)
     if risk_level:
@@ -37,26 +37,8 @@ async def list_health_items(
     if confidence_source:
         query = query.eq("confidence_source", confidence_source)
 
-    # Get count
-    count_result = query.execute()
-    total = count_result.count or 0
-
-    # Re-build with pagination
-    query = supabase.table("health_items").select("*")
-    if category:
-        query = query.eq("category", category)
-    if risk_level:
-        query = query.eq("risk_level", risk_level)
-    if confidence_source:
-        query = query.eq("confidence_source", confidence_source)
-
-    result = (
-        query
-        .order("item_name")
-        .range(offset, offset + per_page - 1)
-        .execute()
-    )
-    return result.data or [], total
+    result = query.order("item_name").range(offset, offset + per_page - 1).execute()
+    return result.data or [], result.count or 0
 
 
 async def get_health_item(supabase: Client, item_id: str) -> dict | None:
@@ -123,7 +105,7 @@ async def auto_insert_inferred_product(
     if not key_ingredients or len(key_ingredients) < 1:
         return None
 
-    product_name = product_name.strip()
+    product_name = html.escape(product_name.strip())  # sanitize for XSS prevention
 
     # Reject generic/junk names
     _blocklist = {"product label image", "check this", "is this safe", "hello", "hi",

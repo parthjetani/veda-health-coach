@@ -409,6 +409,12 @@ class MockQueryBuilder:
         self._insert_data = data
         return self
 
+    def upsert(self, data, on_conflict=None):
+        self._operation = "upsert"
+        self._insert_data = data
+        self._on_conflict = on_conflict
+        return self
+
     def update(self, data):
         self._operation = "update"
         self._update_data = data
@@ -466,6 +472,8 @@ class MockQueryBuilder:
             return self._exec_select()
         elif self._operation == "insert":
             return self._exec_insert()
+        elif self._operation == "upsert":
+            return self._exec_upsert()
         elif self._operation == "update":
             return self._exec_update()
         elif self._operation == "delete":
@@ -543,6 +551,29 @@ class MockQueryBuilder:
                 results.append(item)
             return MockResult(data=results, count=len(results))
         return MockResult()
+
+    def _exec_upsert(self):
+        table = self._db.tables.setdefault(self._table_name, [])
+        data = dict(self._insert_data)
+        conflict_col = getattr(self, "_on_conflict", None)
+
+        # Check if row exists by conflict column
+        if conflict_col and conflict_col in data:
+            for row in table:
+                if row.get(conflict_col) == data[conflict_col]:
+                    # Update existing row
+                    row.update(data)
+                    return MockResult(data=[row], count=1)
+
+        # Insert new
+        if "id" not in data:
+            data["id"] = str(uuid.uuid4())
+        if "created_at" not in data:
+            data["created_at"] = datetime.now(timezone.utc).isoformat()
+        if "is_active" not in data:
+            data["is_active"] = True
+        table.append(data)
+        return MockResult(data=[data], count=1)
 
     def _exec_update(self):
         table = self._get_table_data()

@@ -1,6 +1,9 @@
 import base64
+import html
+import json
 import logging
 import random
+import re
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -119,7 +122,7 @@ async def handle_incoming_message(
             settings=settings,
         )
     except GeminiTimeoutError as e:
-        logger.error("Gemini timeout for %s: %s", whatsapp_number, e)
+        logger.error("[MSG] Gemini timeout: user=%s, msg_id=%s, error=%s", whatsapp_number, message_id, e)
         tip = random.choice(FALLBACK_TIPS)
         try:
             await whatsapp_client.send_text_message(
@@ -128,14 +131,14 @@ async def handle_incoming_message(
         except Exception:
             logger.exception("Failed to send fallback tip to %s", whatsapp_number)
     except (ImageTooLargeError, ImageDownloadError, RateLimitError) as e:
-        logger.warning("Handled error for %s: %s", whatsapp_number, e)
+        logger.warning("[MSG] Handled error: user=%s, msg_id=%s, error=%s", whatsapp_number, message_id, e)
         msg = ERROR_MESSAGES.get(type(e), DEFAULT_ERROR)
         try:
             await whatsapp_client.send_text_message(whatsapp_number, msg)
         except Exception:
             logger.exception("Failed to send error message to %s", whatsapp_number)
     except Exception as e:
-        logger.exception("Unhandled error for %s: %s", whatsapp_number, e)
+        logger.exception("[MSG] Unhandled error: user=%s, msg_id=%s, error=%s", whatsapp_number, message_id, e)
         try:
             await whatsapp_client.send_text_message(whatsapp_number, DEFAULT_ERROR)
         except Exception:
@@ -154,9 +157,12 @@ async def _process_message(
     ai_engine: AIEngine,
     settings: Settings,
 ) -> None:
+    # Correlation logging — trace every message through the pipeline
+    logger.info("[MSG] Start: user=%s, msg_id=%s, type=%s", whatsapp_number, message_id, message_type)
+
     # Step 1: Idempotency check
     if message_id and await is_duplicate_message(supabase, message_id):
-        logger.debug("Duplicate message skipped: %s", message_id)
+        logger.debug("[MSG] Duplicate skipped: msg_id=%s", message_id)
         return
 
     # Step 2: Get or create user
@@ -202,10 +208,13 @@ async def _process_message(
         if handled:
             return
 
-    # Step 5: Knowledge base lookup
+    # Step 5: Knowledge base lookup (skip for very short queries — prevents "Hi" matching "Himalaya")
     product_context = None
     source_context_str = ""
-    kb_result = await lookup_product(supabase, query_text)
+    if len(query_text.strip()) >= 4:
+        kb_result = await lookup_product(supabase, query_text)
+    else:
+        kb_result = None
 
     product_score = None
     progress = None
@@ -298,9 +307,20 @@ async def _process_message(
     metadata = _extract_metadata(raw_response, bool(kb_result))
     if product_score is not None:
         metadata["product_score"] = product_score
+    metadata["raw_response"] = raw_response  # full JSON for debugging
 
-    # Step 10: Store assistant reply with metadata
-    await store_message(supabase, user_id, "assistant", reply_text, metadata=metadata)
+    # Step 10: Store clean summary as conversation history (NOT formatted WhatsApp text)
+    # This prevents token waste and fixes lookup_alternatives searching with formatted messages
+    _parsed_for_history = _try_parse_response(raw_response)
+    if _parsed_for_history:
+        clean_summary = _parsed_for_history.get("summary", "")
+        suggestion = _parsed_for_history.get("suggestion")
+        if suggestion:
+            clean_summary += " " + suggestion
+    else:
+        clean_summary = reply_text  # fallback if parse failed
+
+    await store_message(supabase, user_id, "assistant", clean_summary, metadata=metadata)
 
     # Step 11: Send reply (with 24h window fallback)
     try:
@@ -316,10 +336,8 @@ async def _process_message(
     )
 
     logger.info(
-        "Message processed: user=%s, type=%s, kb_match=%s",
-        whatsapp_number,
-        message_type,
-        bool(kb_result),
+        "[MSG] Done: user=%s, msg_id=%s, type=%s, kb_match=%s, score=%s",
+        whatsapp_number, message_id, message_type, bool(kb_result), product_score,
     )
 
 
@@ -355,7 +373,6 @@ WHATSAPP REPLY:
 
 
 def _extract_metadata(raw_json: str, kb_match: bool) -> dict:
-    import json
     metadata = {"kb_match": kb_match}
     try:
         data = json.loads(raw_json)
@@ -430,7 +447,6 @@ async def _is_rate_limited(supabase: Client, user_id: str, limit: int = 30) -> b
 
 
 def _try_parse_response(raw: str) -> dict | None:
-    import json
     try:
         return json.loads(raw)
     except Exception:
@@ -450,7 +466,6 @@ def _verdict_to_score(verdict: str) -> int:
 
 def _extract_product_name(parsed: dict) -> str | None:
     """Extract a real product name from AI response. Returns None if can't extract a good name."""
-    import re
 
     summary = parsed.get("summary", "")
     if not summary:

@@ -10,7 +10,7 @@ Veda is a production-grade WhatsApp AI health coaching chatbot. Users check prod
 # Run dev server
 uvicorn app.main:app --reload --port 8000
 
-# Run tests (152 tests)
+# Run tests (153 tests)
 ./venv/Scripts/python -m pytest tests/ -v
 
 # Seed products to database
@@ -36,17 +36,18 @@ uvicorn app.main:app --reload --port 8000
 
 ```
 User message -> POST /webhook/whatsapp -> BackgroundTask:
-  0. Rate limit check (30/user/hour)
-  1. Command router:
+  0. Verify X-Hub-Signature-256 (optional, skipped if WHATSAPP_APP_SECRET empty)
+  1. Rate limit check (30/user/hour)
+  2. Command router:
      - "my footprint" -> footprint.py (bypass AI)
      - "what should I swap" -> swap_priority.py (bypass AI)
      - "compare X vs Y" -> product_comparison.py (bypass AI)
-  2. KB lookup (fuzzy + alias + substring)
-  3. Calculate score (deterministic, 0-100)
-  4. Auto-save to user_products + auto-insert inferred to health_items
-  5. Call Gemini API (8s timeout, retry once, structured JSON)
-  6. Format response + score + progress + EWG rating
-  7. Send reply + feedback buttons (24h window fallback to template)
+  3. KB lookup (fuzzy + alias + substring, skip if query < 4 chars)
+  4. Calculate score (deterministic, 0-100)
+  5. Auto-save to user_products + auto-insert inferred to health_items
+  6. Call Gemini API (8s timeout, retry once, structured JSON)
+  7. Format response + score + progress + EWG rating
+  8. Send reply + feedback buttons (24h window fallback to template)
 ```
 
 ## Key Directories
@@ -100,6 +101,7 @@ Required:
 - `SUPABASE_URL` - https://xxx.supabase.co
 - `SUPABASE_SERVICE_ROLE_KEY` - service_role key (NOT anon)
 - `ADMIN_API_KEY` - Long random string
+- `WHATSAPP_APP_SECRET` - From Meta App Dashboard (Settings > Basic > App Secret). Required for webhook signature verification in production. Optional in dev (skipped if empty).
 
 Optional (have defaults):
 - `GEMINI_MODEL` (default: gemini-2.5-flash)
@@ -107,6 +109,7 @@ Optional (have defaults):
 - `GEMINI_TEMPERATURE` (default: 0.3)
 - `WHATSAPP_API_VERSION` (default: v21.0)
 - `ENVIRONMENT` (default: development)
+- `CORS_ORIGINS` (default: *) - Comma-separated allowed origins for CORS. Use specific origins in production (e.g., `https://yourdomain.com`). `allow_credentials=False` when wildcard per CORS spec.
 
 ## Database (6 tables + 1 column added)
 
@@ -132,6 +135,7 @@ Optional (have defaults):
 - Don't store scores in the database - always compute on-the-fly from `flagged_ingredients`
 - Don't route footprint/swap commands through AI - they're deterministic backend operations
 - Don't commit `.env`, `test_conversations.txt`, or `venv/`
+- Don't use `import` inside function bodies - move all imports to module top level (PEP 8)
 
 ## Workflow Orchestration
 

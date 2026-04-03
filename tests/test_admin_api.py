@@ -58,4 +58,6 @@ class TestHealthCheck:
         c, _ = client
         response = c.get("/health")
         assert response.status_code == 200
-        assert response.json() == {"status": "ok"}
+        data = response.json()
+        assert data["status"] in ("ok", "degraded")
+        assert "checks" in data

@@ -241,10 +241,19 @@ When AI analyzes an unknown product, the result is auto-saved to `health_items` 
 ### 21. Production hardening
 Gemini timeout (8 sec) + retry, per-user rate limiting (30/hour via DB count), large image rejection (>5MB), 5 custom exception types for contextual errors, 24h WhatsApp window fallback to template messages, 10 fallback health tips when AI is down, conditional test logging (dev only).
 
-### 22. EWG credibility layer
+### 22. Webhook signature verification
+Incoming WhatsApp webhooks are verified via `X-Hub-Signature-256` header using HMAC-SHA256 with `WHATSAPP_APP_SECRET`. This prevents forged webhook payloads. Optional in development (skipped if `WHATSAPP_APP_SECRET` is empty), but should always be set in production.
+
+### 23. Conversation history stores clean summaries
+Assistant messages stored in the `conversations` table use the AI summary text (from `ai_response.summary`), not the formatted WhatsApp reply (which includes emoji, score lines, share prompts). This keeps conversation history clean for context injection into subsequent Gemini calls. The full raw JSON response is preserved in the `metadata` column for debugging.
+
+### 24. Prompt trimming (4500 to 1000 tokens)
+System prompt (`prompts/health_coach.txt`) was reduced from 297 lines (~4500 tokens) to 93 lines (~1000 tokens). Sections redundant with `response_schema` enforcement were removed. Smaller prompts mean faster Gemini responses, lower cost, and more room for conversation context within the token budget.
+
+### 25. EWG credibility layer
 Products with `ewg_rating` show human-readable safety database rating ("Low concern (3/10)"). Used as supporting signal, never override for ingredient analysis. Prompt instructs AI to reference it softly.
 
-### 23. Daily health tips
+### 26. Daily health tips
 30 curated tips rotating daily. Admin endpoint `POST /admin/send-daily-tip` triggers sending to all active users via template message. Ready for cron automation.
 
 ---

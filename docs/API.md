@@ -14,7 +14,24 @@ Returns application status.
 
 **Response:**
 ```json
-{"status": "ok"}
+{
+  "status": "ok",
+  "checks": {
+    "server": "ok",
+    "database": "ok"
+  }
+}
+```
+
+When the database is unreachable:
+```json
+{
+  "status": "degraded",
+  "checks": {
+    "server": "ok",
+    "database": "error"
+  }
+}
 ```
 
 ---

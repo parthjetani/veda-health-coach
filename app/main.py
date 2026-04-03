@@ -58,11 +58,18 @@ def create_app() -> FastAPI:
         redoc_url="/redoc" if not settings.is_production else None,
     )
 
-    # CORS — allow admin dashboard access
+    # CORS — configurable via CORS_ORIGINS env var
+    if settings.cors_origins == "*":
+        cors_origins = ["*"]
+        cors_credentials = False  # wildcard + credentials is invalid per CORS spec
+    else:
+        cors_origins = [o.strip() for o in settings.cors_origins.split(",") if o.strip()]
+        cors_credentials = True
+
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"] if not settings.is_production else [],
-        allow_credentials=True,
+        allow_origins=cors_origins,
+        allow_credentials=cors_credentials,
         allow_methods=["*"],
         allow_headers=["*"],
     )
@@ -76,10 +83,17 @@ def create_app() -> FastAPI:
             content={"error": "Internal server error"},
         )
 
-    # Health check
+    # Health check with dependency verification
     @app.get("/health")
     async def health_check():
-        return {"status": "ok"}
+        checks = {"server": "ok"}
+        try:
+            app.state.supabase.table("users").select("id").limit(1).execute()
+            checks["database"] = "ok"
+        except Exception:
+            checks["database"] = "error"
+        status = "ok" if all(v == "ok" for v in checks.values()) else "degraded"
+        return {"status": status, "checks": checks}
 
     # Register routers
     from app.api.webhooks.whatsapp import router as whatsapp_router
