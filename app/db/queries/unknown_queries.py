@@ -26,18 +26,11 @@ async def list_unknown_queries(
 ) -> tuple[list[dict], int]:
     offset = (page - 1) * per_page
 
-    count_result = (
-        supabase.table("unknown_queries")
-        .select("id", count="exact")
-        .execute()
-    )
-    total = count_result.count or 0
-
     result = (
         supabase.table("unknown_queries")
-        .select("*")
+        .select("*", count="exact")
         .order("timestamp", desc=True)
         .range(offset, offset + per_page - 1)
         .execute()
     )
-    return result.data or [], total
+    return result.data or [], result.count or 0

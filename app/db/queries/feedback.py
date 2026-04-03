@@ -42,12 +42,6 @@ async def list_feedback(
     query = supabase.table("feedback").select("*", count="exact")
     if rating:
         query = query.eq("rating", rating)
-    count_result = query.execute()
-    total = count_result.count or 0
-
-    query = supabase.table("feedback").select("*")
-    if rating:
-        query = query.eq("rating", rating)
     result = query.order("timestamp", desc=True).range(offset, offset + per_page - 1).execute()
 
-    return result.data or [], total
+    return result.data or [], result.count or 0

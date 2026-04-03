@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime, timezone
 
 from supabase import Client
 
@@ -31,7 +32,7 @@ async def upsert_user_product(
             supabase.table("user_products")
             .update({
                 "check_count": existing["check_count"] + 1,
-                "last_checked_at": "now()",
+                "last_checked_at": datetime.now(timezone.utc).isoformat(),
                 "score": score,
             })
             .eq("id", existing["id"])
