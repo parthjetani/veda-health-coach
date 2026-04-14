@@ -35,6 +35,7 @@ Patterns and mistakes to avoid. Review at session start.
 
 ## Conversation History
 - Never store formatted WhatsApp text (with emoji, score lines, share prompts) in conversation history. It pollutes the context window when injected into subsequent AI calls. Store the clean AI summary and keep the raw JSON in metadata for debugging.
+- When storing clean summaries, preserve signals downstream services depend on. `lookup_alternatives` scans history text for verdict keywords ("Safe", "Use with caution", "Avoid") — the structured `verdict` field must be prepended as `[Verdict]` into the stored text or the affirmation-follow-up flow silently loses KB alternatives context.
 
 ## Architecture
 - Plan before building any non-trivial feature.

@@ -1,3 +1,4 @@
+import asyncio
 import logging
 
 from supabase import Client
@@ -6,104 +7,127 @@ logger = logging.getLogger(__name__)
 
 
 async def get_analytics(supabase: Client) -> dict:
-    # Total users
-    users_result = supabase.table("users").select("id", count="exact").execute()
+    # Supabase Python client is synchronous. Run all independent queries
+    # concurrently via asyncio.to_thread so wall time is max() not sum().
+    def q_total_users():
+        return supabase.table("users").select("id", count="exact").execute()
+
+    def q_total_messages():
+        return supabase.table("conversations").select("id", count="exact").execute()
+
+    def q_user_messages():
+        return (
+            supabase.table("conversations")
+            .select("id", count="exact")
+            .eq("role", "user")
+            .execute()
+        )
+
+    def q_kb_matches():
+        return (
+            supabase.table("conversations")
+            .select("id", count="exact")
+            .eq("role", "assistant")
+            .contains("metadata", {"kb_match": True})
+            .execute()
+        )
+
+    def q_kb_misses():
+        return (
+            supabase.table("conversations")
+            .select("id", count="exact")
+            .eq("role", "assistant")
+            .contains("metadata", {"kb_match": False})
+            .execute()
+        )
+
+    def q_good_feedback():
+        return (
+            supabase.table("feedback")
+            .select("id", count="exact")
+            .eq("rating", "good")
+            .execute()
+        )
+
+    def q_bad_feedback():
+        return (
+            supabase.table("feedback")
+            .select("id", count="exact")
+            .eq("rating", "bad")
+            .execute()
+        )
+
+    def q_unresolved_queries():
+        return (
+            supabase.table("unknown_queries")
+            .select("id", count="exact")
+            .eq("resolved", False)
+            .execute()
+        )
+
+    def q_total_products():
+        return supabase.table("health_items").select("id", count="exact").execute()
+
+    def q_top_unknown():
+        return (
+            supabase.table("unknown_queries")
+            .select("query_text")
+            .eq("resolved", False)
+            .order("timestamp", desc=True)
+            .limit(10)
+            .execute()
+        )
+
+    def q_bad_reasons():
+        return (
+            supabase.table("feedback")
+            .select("reason")
+            .eq("rating", "bad")
+            .not_.is_("reason", "null")
+            .order("timestamp", desc=True)
+            .limit(10)
+            .execute()
+        )
+
+    (
+        users_result,
+        messages_result,
+        user_messages_result,
+        matched_result,
+        unmatched_result,
+        good_feedback,
+        bad_feedback,
+        unknown_result,
+        products_result,
+        top_unknown,
+        bad_reasons,
+    ) = await asyncio.gather(
+        asyncio.to_thread(q_total_users),
+        asyncio.to_thread(q_total_messages),
+        asyncio.to_thread(q_user_messages),
+        asyncio.to_thread(q_kb_matches),
+        asyncio.to_thread(q_kb_misses),
+        asyncio.to_thread(q_good_feedback),
+        asyncio.to_thread(q_bad_feedback),
+        asyncio.to_thread(q_unresolved_queries),
+        asyncio.to_thread(q_total_products),
+        asyncio.to_thread(q_top_unknown),
+        asyncio.to_thread(q_bad_reasons),
+    )
+
     total_users = users_result.count or 0
-
-    # Active users (sent at least one message)
-    active_result = (
-        supabase.table("conversations")
-        .select("user_id", count="exact")
-        .eq("role", "user")
-        .execute()
-    )
-
-    # Total messages
-    messages_result = supabase.table("conversations").select("id", count="exact").execute()
     total_messages = messages_result.count or 0
-
-    # User messages only
-    user_messages_result = (
-        supabase.table("conversations")
-        .select("id", count="exact")
-        .eq("role", "user")
-        .execute()
-    )
     user_messages = user_messages_result.count or 0
-
-    # KB match rate from metadata
-    matched_result = (
-        supabase.table("conversations")
-        .select("id", count="exact")
-        .eq("role", "assistant")
-        .contains("metadata", {"kb_match": True})
-        .execute()
-    )
     kb_matches = matched_result.count or 0
-
-    unmatched_result = (
-        supabase.table("conversations")
-        .select("id", count="exact")
-        .eq("role", "assistant")
-        .contains("metadata", {"kb_match": False})
-        .execute()
-    )
     kb_misses = unmatched_result.count or 0
-
     kb_total = kb_matches + kb_misses
     kb_match_rate = round((kb_matches / kb_total * 100), 1) if kb_total > 0 else 0
-
-    # Feedback stats
-    good_feedback = (
-        supabase.table("feedback")
-        .select("id", count="exact")
-        .eq("rating", "good")
-        .execute()
-    )
-    bad_feedback = (
-        supabase.table("feedback")
-        .select("id", count="exact")
-        .eq("rating", "bad")
-        .execute()
-    )
     good_count = good_feedback.count or 0
     bad_count = bad_feedback.count or 0
     total_feedback = good_count + bad_count
     satisfaction_rate = round((good_count / total_feedback * 100), 1) if total_feedback > 0 else 0
-
-    # Unknown queries count
-    unknown_result = (
-        supabase.table("unknown_queries")
-        .select("id", count="exact")
-        .eq("resolved", False)
-        .execute()
-    )
     unresolved_queries = unknown_result.count or 0
-
-    # Product count
-    products_result = supabase.table("health_items").select("id", count="exact").execute()
     total_products = products_result.count or 0
-
-    # Top unknown queries (most asked products not in DB)
-    top_unknown = (
-        supabase.table("unknown_queries")
-        .select("query_text")
-        .eq("resolved", False)
-        .order("timestamp", desc=True)
-        .limit(10)
-        .execute()
-    )
-
-    # Bad feedback reasons
-    bad_reasons = (
-        supabase.table("feedback")
-        .select("reason")
-        .eq("rating", "bad")
-        .not_.is_("reason", "null")
-        .order("timestamp", desc=True)
-        .limit(10)
-        .execute()
-    )
 
     return {
         "overview": {

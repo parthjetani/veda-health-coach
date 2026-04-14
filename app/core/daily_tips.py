@@ -5,6 +5,7 @@ Daily Health Tips
 to all active users. Triggered manually via admin endpoint or by cron job.
 """
 
+import asyncio
 import logging
 from datetime import datetime
 
@@ -13,6 +14,10 @@ from supabase import Client
 from app.services.whatsapp_client import WhatsAppClient
 
 logger = logging.getLogger(__name__)
+
+# Bounded concurrency for outbound WhatsApp template sends.
+# Meta rate-limits per-number; 10 in flight is safe and ~10x faster than serial.
+DAILY_TIP_CONCURRENCY = 10
 
 TIPS = [
     "Check your shampoo for 'DMDM Hydantoin' - it releases formaldehyde. Many popular brands use it.",
@@ -71,17 +76,21 @@ async def send_daily_tips(supabase: Client, whatsapp_client: WhatsAppClient) -> 
         logger.info("No active users for daily tip")
         return 0
 
-    sent = 0
-    for user in users:
-        number = user.get("whatsapp_number")
-        if not number:
-            continue
-        try:
-            # Must use template message (users haven't messaged recently)
-            await whatsapp_client.send_template_message(number, "how_to_use")
-            sent += 1
-        except Exception as e:
-            logger.error("Failed to send daily tip to %s: %s", number, e)
+    semaphore = asyncio.Semaphore(DAILY_TIP_CONCURRENCY)
+
+    async def send_one(number: str) -> bool:
+        async with semaphore:
+            try:
+                # Must use template message (users haven't messaged recently)
+                await whatsapp_client.send_template_message(number, "how_to_use")
+                return True
+            except Exception as e:
+                logger.error("Failed to send daily tip to %s: %s", number, e)
+                return False
+
+    numbers = [u.get("whatsapp_number") for u in users if u.get("whatsapp_number")]
+    results = await asyncio.gather(*(send_one(n) for n in numbers))
+    sent = sum(1 for r in results if r)
 
     logger.info("Daily tips sent to %d/%d users", sent, len(users))
     return sent

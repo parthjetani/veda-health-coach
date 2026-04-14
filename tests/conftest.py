@@ -3,16 +3,17 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-# Set dummy env vars before importing app modules
-os.environ.setdefault("WHATSAPP_ACCESS_TOKEN", "test-token")
-os.environ.setdefault("WHATSAPP_PHONE_NUMBER_ID", "123456789")
-os.environ.setdefault("WHATSAPP_VERIFY_TOKEN", "test-verify-token")
-os.environ.setdefault("GEMINI_API_KEY", "test-gemini-key")
+# Force-set dummy env vars so real credentials in .env can never leak into tests
+os.environ["WHATSAPP_ACCESS_TOKEN"] = "test-token"
+os.environ["WHATSAPP_PHONE_NUMBER_ID"] = "123456789"
+os.environ["WHATSAPP_VERIFY_TOKEN"] = "test-verify-token"
+os.environ["WHATSAPP_APP_SECRET"] = ""
+os.environ["GEMINI_API_KEY"] = "test-gemini-key"
+os.environ["SUPABASE_URL"] = "https://test.supabase.co"
+os.environ["SUPABASE_SERVICE_ROLE_KEY"] = "test-service-role-key"
+os.environ["ADMIN_API_KEY"] = "test-admin-key"
 # Remove old Anthropic vars that may linger in .env
 os.environ.pop("ANTHROPIC_API_KEY", None)
-os.environ.setdefault("SUPABASE_URL", "https://test.supabase.co")
-os.environ.setdefault("SUPABASE_SERVICE_ROLE_KEY", "test-service-role-key")
-os.environ["ADMIN_API_KEY"] = "test-admin-key"
 
 # Clear settings cache so tests use test env vars
 from app.config import get_settings

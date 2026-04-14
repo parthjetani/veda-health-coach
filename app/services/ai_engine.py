@@ -1,4 +1,5 @@
 import asyncio
+import base64
 import logging
 
 from google import genai
@@ -87,7 +88,6 @@ class AIEngine:
         parts = []
 
         if image_base64:
-            import base64
             image_bytes = base64.b64decode(image_base64)
             parts.append(
                 types.Part.from_bytes(

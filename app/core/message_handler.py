@@ -310,11 +310,15 @@ async def _process_message(
     metadata["raw_response"] = raw_response  # full JSON for debugging
 
     # Step 10: Store clean summary as conversation history (NOT formatted WhatsApp text)
-    # This prevents token waste and fixes lookup_alternatives searching with formatted messages
+    # Prepend verdict tag (e.g. "[Use with caution]") so lookup_alternatives can
+    # still match the turn as a product check — the structured verdict field is
+    # otherwise lost when we drop the emoji/score formatting from history.
     _parsed_for_history = _try_parse_response(raw_response)
     if _parsed_for_history:
-        clean_summary = _parsed_for_history.get("summary", "")
+        verdict = _parsed_for_history.get("verdict")
+        summary = _parsed_for_history.get("summary", "")
         suggestion = _parsed_for_history.get("suggestion")
+        clean_summary = f"[{verdict}] {summary}" if verdict else summary
         if suggestion:
             clean_summary += " " + suggestion
     else:
